@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -6,13 +7,26 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // TODO: Read the integer N
+        if (!scanner.hasNextInt()) return;
+        int n = scanner.nextInt();
         
-        // TODO: Create a HashSet to store the integers
+        Set<Integer> uniqueNumbers = new LinkedHashSet<>();
         
-        // TODO: Loop N times to read the integers and add them to the HashSet
+        for (int i = 0; i < n; i++) {
+            if (scanner.hasNextInt()) {
+                uniqueNumbers.add(scanner.nextInt());
+            }
+        }
         
-        // TODO: Iterate through the HashSet and print the unique numbers (space-separated)
+        int count = 0;
+        for (Integer num : uniqueNumbers) {
+            System.out.print(num);
+            count++;
+            if (count < uniqueNumbers.size()) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
         
         scanner.close();
     }
